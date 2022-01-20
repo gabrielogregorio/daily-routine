@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './styles.module.css'
 
 import { BiUpArrow, BiDownArrow } from 'react-icons/bi'
-import { getLocalstorage, isEqualData, setLocalstorage } from '../../core/services/localstorage';
+import { getLocalstorage, setLocalstorage } from '../../core/services/localstorage';
 
 type taskListType = {
   name: string,

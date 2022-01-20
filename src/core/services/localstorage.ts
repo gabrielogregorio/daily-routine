@@ -8,7 +8,6 @@ export function setLocalstorage(data: any) {
 
 export function isEqualData(data: any) {
   return convertToLocastorageData(data) === localStorage.getItem('data')
-
 }
 
 export function getLocalstorage() {
