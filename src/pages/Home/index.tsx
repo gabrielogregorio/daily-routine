@@ -15,7 +15,6 @@ export const Home = () => {
   const [newInput, setNewInput] = useState('')
   const [taskLists, setTaskLists] = useState<taskListType[]>(localStorageTaskList)
   const taskListsSorted: taskListType[] = taskLists.sort((a, b) => a.order > b.order ? 1 : -1 )
-  const [disableButton, setDisableButton ]= useState(isEqualData(taskLists))
 
   function handleInput(event: any) {
     setNewInput(event.target.value)
@@ -34,7 +33,6 @@ export const Home = () => {
       setTaskLists((prev) => [...prev, {name: newInput, order: maxOrder}])
       setNewInput('')
     }
-
   }
 
   function deleteTask(taskOrder: number) {
@@ -63,14 +61,8 @@ export const Home = () => {
     }
     setTaskLists(data)
   }
-
-  function handleLocalstorage() {
-    setLocalstorage(taskLists)
-    setDisableButton(true)
-  }
-
   useEffect(() => {
-    setDisableButton(isEqualData(taskLists))
+    setLocalstorage(taskLists)
   }, [taskLists])
 
   return (
@@ -80,6 +72,7 @@ export const Home = () => {
     {taskListsSorted.map(({order, name}, index) => {
       return <div key={order} className={styles.task}>
         <button className={styles.task__name}><span>{name}</span></button>
+
         <div className={styles.task__arrow}>
           <button onClick={() => putPosition('TOP', index)}><BiUpArrow /></button>
           <button onClick={() => putPosition('BOTTOM', index)}><BiDownArrow /></button>
@@ -90,10 +83,6 @@ export const Home = () => {
 
     <div className={styles.input} >
       <input type="text" value={newInput} onChange={handleInput} onKeyPress={handleReturn}/>
-    </div>
-
-    <div>
-      <button  disabled={disableButton} onClick={handleLocalstorage}>Salvar</button>
     </div>
 
     </main>
