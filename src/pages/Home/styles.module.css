@@ -1,3 +1,52 @@
 .main {
   background-color: #f3f3f3;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.task {
+  padding: .5rem;
+  width: 300px;
+  display: flex;
+  border: 1px solid #777;
+  margin-bottom: .1rem;
+}
+
+.task__name {
+  flex: 1;
+  text-align: left;
+  background: transparent;
+  border: none;
+}
+
+.task__arrow {
+  display: flex;
+  flex-direction: column;
+  margin-right: .5rem;
+  flex: 1;
+  max-width: 2rem;
+  cursor: pointer;
+}
+
+.task__close {
+  padding: .2rem;
+  font-size: 1rem;
+}
+
+
+.input {
+  padding: 0;
+  width: 300px;
+  display: flex;
+  margin-top: .2rem;
+}
+
+.input input {
+  border: 1px solid #777;
+  flex: 1;
+  font-size: 1rem;
+  padding: .5rem;
 }
