@@ -1,5 +1,5 @@
 .main {
-  background-color: #f3f3f3;
+  background-color: #292929;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -8,11 +8,11 @@
 }
 
 .task {
-  padding: .5rem;
+  padding: 0.5rem;
   width: 300px;
   display: flex;
   border: 1px solid #777;
-  margin-bottom: .1rem;
+  margin-bottom: 0.1rem;
 }
 
 .task__name {
@@ -20,33 +20,49 @@
   text-align: left;
   background: transparent;
   border: none;
+  color: #ddd;
 }
 
 .task__arrow {
   display: flex;
   flex-direction: column;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   flex: 1;
   max-width: 2rem;
   cursor: pointer;
 }
-
-.task__close {
-  padding: .2rem;
-  font-size: 1rem;
+.task__arrow button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
+.task__arrow button span {
+  display: none;
+}
+
+.task__close {
+  padding: 0.2rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: none;
+  color: #ddd;
+  cursor: pointer;
+}
 
 .input {
   padding: 0;
   width: 300px;
   display: flex;
-  margin-top: .2rem;
+  margin-top: 0.2rem;
 }
 
 .input input {
   border: 1px solid #777;
   flex: 1;
   font-size: 1rem;
-  padding: .5rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: white;
 }
